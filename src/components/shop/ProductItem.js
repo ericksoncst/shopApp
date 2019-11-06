@@ -75,12 +75,15 @@ const styles = StyleSheet.create({
     height: '60%',
   },
   title: {
+    fontFamily: 'OpenSans-Bold',
     fontSize: 18,
-    marginVertical: 4,
+    marginTop: 5,
   },
   price: {
+    fontFamily: 'OpenSans-Regular',
     fontSize: 14,
     color: '#888',
+    marginTop: 5,
   },
   actions: {
     flexDirection: 'row',

@@ -1,4 +1,4 @@
-import PRODUCTS from '../data/mock';
+import PRODUCTS from '../../data/mock';
 
 const initialState = {
   availableProducts: PRODUCTS,

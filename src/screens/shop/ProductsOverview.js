@@ -15,7 +15,11 @@ const ProductsOverview = props => {
           image={itemData.item.imageUrl}
           title={itemData.item.title}
           price={itemData.item.price}
-          onViewDetails={() => {}}
+          onViewDetails={() =>
+            props.navigation.navigate('ProductDetails', {
+              productId: itemData.item.id,
+            })
+          }
           onAddToCart={() => {}}
         />
       )}

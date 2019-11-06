@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import { Text, View } from 'react-native'
+import React, {Component} from 'react';
+import {Text, View} from 'react-native';
 
 export default class Orders extends Component {
   render() {
@@ -7,6 +7,6 @@ export default class Orders extends Component {
       <View>
         <Text> textInComponent </Text>
       </View>
-    )
+    );
   }
 }

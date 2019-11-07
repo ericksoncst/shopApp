@@ -9,6 +9,7 @@ import colors from '../constants/colors';
 import ProductDetails from '../screens/shop/ProductDetails';
 import Cart from '../screens/shop/Cart';
 import Orders from '../screens/shop/Orders';
+import UserProducts from '../screens/user/UserProducts';
 
 const defaulNavOptions = {
   headerStyle: {
@@ -51,6 +52,24 @@ const OrdersNavigator = createStackNavigator(
     navigationOptions: {
       drawerIcon: drawerConfig => (
         <Icon
+          name={Platform.OS === 'android' ? 'md-list' : 'ios-list'}
+          size={23}
+          color={drawerConfig.tintColor}
+        />
+      ),
+    },
+    defaultNavigationOptions: defaulNavOptions,
+  },
+);
+
+const AdminNavigator = createStackNavigator(
+  {
+    UserProducts: UserProducts,
+  },
+  {
+    navigationOptions: {
+      drawerIcon: drawerConfig => (
+        <Icon
           name={Platform.OS === 'android' ? 'md-create' : 'ios-create'}
           size={23}
           color={drawerConfig.tintColor}
@@ -65,6 +84,7 @@ const ShopNavigator = createDrawerNavigator(
   {
     Products: ProductsNavigator,
     Orders: OrdersNavigator,
+    Admin: AdminNavigator,
   },
   {
     contentOptions: {

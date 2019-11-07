@@ -1,5 +1,12 @@
+/* eslint-disable no-use-before-define */
 import React from 'react';
-import {View, Text, StyleSheet, TouchableOpacity, Platform} from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  Platform,
+} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 const CartItems = props => {
@@ -16,7 +23,8 @@ const CartItems = props => {
         {props.deletable && (
           <TouchableOpacity
             style={styles.removeButton}
-            onPress={props.onRemove}>
+            onPress={props.onRemove}
+          >
             <Icon
               name={Platform.OS === 'android' ? 'md-trash' : 'ios-trash'}
               size={23}
@@ -37,7 +45,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     marginHorizontal: 20,
   },
-  itemData: {flexDirection: 'row', alignItems: 'center'},
+  itemData: { flexDirection: 'row', alignItems: 'center' },
   quantity: {
     fontFamily: 'OpenSans-Regular',
     color: '#888',
@@ -47,7 +55,7 @@ const styles = StyleSheet.create({
     fontFamily: 'OpenSans-Bold',
     fontSize: 16,
   },
-  removeButton: {marginLeft: 20},
+  removeButton: { marginLeft: 20 },
 });
 
 export default CartItems;

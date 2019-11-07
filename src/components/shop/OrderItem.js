@@ -1,5 +1,6 @@
-import React, {useState} from 'react';
-import {View, Text, Button, StyleSheet} from 'react-native';
+/* eslint-disable no-use-before-define */
+import React, { useState } from 'react';
+import { View, Text, Button, StyleSheet } from 'react-native';
 import colors from '../../constants/colors';
 import CartItems from '../../components/shop/CartItems';
 
@@ -36,7 +37,7 @@ const styles = StyleSheet.create({
   orderItem: {
     shadowColor: 'black',
     shadowOpacity: 0.26,
-    shadowOffset: {width: 0, height: 2},
+    shadowOffset: { width: 0, height: 2 },
     shadowRadius: 8,
     elevation: 5,
     borderRadius: 10,
@@ -51,7 +52,7 @@ const styles = StyleSheet.create({
     width: '100%',
     marginBottom: 15,
   },
-  sumaryDetails: {width: '100%'},
+  sumaryDetails: { width: '100%' },
   totalAmount: {
     fontFamily: 'OpenSans-Bold',
     fontSize: 16,

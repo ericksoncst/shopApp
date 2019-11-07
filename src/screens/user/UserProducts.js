@@ -1,7 +1,7 @@
 import React from 'react';
-import {FlatList, Platform, Button} from 'react-native';
-import {useSelector, useDispatch} from 'react-redux';
-import {HeaderButtons, Item} from 'react-navigation-header-buttons';
+import { FlatList, Platform, Button } from 'react-native';
+import { useSelector, useDispatch } from 'react-redux';
+import { HeaderButtons, Item } from 'react-navigation-header-buttons';
 import ProductItem from '../../components/shop/ProductItem';
 import HeaderButton from '../../components/ui/HeaderButton';
 import colors from '../../constants/colors';
@@ -11,7 +11,7 @@ const UserProducts = props => {
   const userProducts = useSelector(state => state.products.userProducts);
   const dispatch = useDispatch();
   const editProductHandler = id => {
-    props.navigation.navigate('EditProducts', {productId: id});
+    props.navigation.navigate('EditProducts', { productId: id });
   };
   return (
     <FlatList
@@ -24,7 +24,8 @@ const UserProducts = props => {
           price={itemData.item.price}
           onSelect={() => {
             editProductHandler(itemData.item.id);
-          }}>
+          }}
+        >
           <Button
             color={colors.primary}
             title="Edit"

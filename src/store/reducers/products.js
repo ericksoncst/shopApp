@@ -1,5 +1,5 @@
 import PRODUCTS from '../../data/mock';
-import {DELETE_PRODUCT} from '../actions/products';
+import { DELETE_PRODUCT } from '../actions/products';
 
 const initialState = {
   availableProducts: PRODUCTS,
@@ -12,12 +12,13 @@ export default (state = initialState, action) => {
       return {
         ...state,
         userProducts: state.userProducts.filter(
-          product => product.id !== action.pid,
+          product => product.id !== action.pid
         ),
         availableProducts: state.availableProducts.filter(
-          product => product.id !== action.pid,
+          product => product.id !== action.pid
         ),
       };
+    default:
+      return state;
   }
-  return state;
 };

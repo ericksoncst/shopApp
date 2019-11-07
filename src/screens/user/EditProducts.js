@@ -1,4 +1,5 @@
-import React, {useState, useEffect, useCallback} from 'react';
+/* eslint-disable no-use-before-define */
+import React, { useState, useEffect, useCallback } from 'react';
 import {
   View,
   ScrollView,
@@ -7,29 +8,31 @@ import {
   StyleSheet,
   Platform,
 } from 'react-native';
-import {HeaderButtons, Item} from 'react-navigation-header-buttons';
-import {useSelector} from 'react-redux';
+import { HeaderButtons, Item } from 'react-navigation-header-buttons';
+import { useSelector } from 'react-redux';
 import HeaderButton from '../../components/ui/HeaderButton';
+
 const EditProducts = props => {
   const productId = props.navigation.getParam('productId');
   const editedProduct = useSelector(state =>
-    state.products.userProducts.find(prod => prod.id === productId),
+    state.products.userProducts.find(prod => prod.id === productId)
   );
   const [title, setTitle] = useState(editedProduct ? editedProduct.title : '');
   const [imageUrl, setImageUrl] = useState(
-    editedProduct ? editedProduct.imageUrl : '',
+    editedProduct ? editedProduct.imageUrl : ''
   );
   const [price, setPrice] = useState('');
   const [description, setDescription] = useState(
-    editedProduct ? editedProduct.description : '',
+    editedProduct ? editedProduct.description : ''
   );
 
   const submitHandler = useCallback(() => {
+    // eslint-disable-next-line no-console
     console.log('SUBMIT');
   }, []);
 
   useEffect(() => {
-    props.navigation.setParams({submit: submitHandler});
+    props.navigation.setParams({ submit: submitHandler });
   }, [submitHandler]);
 
   return (
@@ -94,7 +97,7 @@ const styles = StyleSheet.create({
 });
 
 EditProducts.navigationOptions = navData => {
-  const submitFn = navData.navigation.getParam('submit')
+  const submitFn = navData.navigation.getParam('submit');
   return {
     headerTitle: navData.navigation.getParam('productId')
       ? 'Edit Product'

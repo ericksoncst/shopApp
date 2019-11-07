@@ -1,8 +1,8 @@
 import React from 'react';
-import {Text, FlatList, Platform} from 'react-native';
-import {useSelector} from 'react-redux';
+import { Text, FlatList, Platform } from 'react-native';
+import { useSelector } from 'react-redux';
 
-import {HeaderButtons, Item} from 'react-navigation-header-buttons';
+import { HeaderButtons, Item } from 'react-navigation-header-buttons';
 import HeaderButton from '../../components/ui/HeaderButton';
 import OrderItem from '../../components/shop/OrderItem';
 

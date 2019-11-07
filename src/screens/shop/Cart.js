@@ -1,6 +1,9 @@
+/* eslint-disable guard-for-in */
+/* eslint-disable no-restricted-syntax */
+/* eslint-disable no-use-before-define */
 import React from 'react';
-import {View, Text, StyleSheet, FlatList, Button} from 'react-native';
-import {useSelector, useDispatch} from 'react-redux';
+import { View, Text, StyleSheet, FlatList, Button } from 'react-native';
+import { useSelector, useDispatch } from 'react-redux';
 import colors from '../../constants/colors';
 import CartItems from '../../components/shop/CartItems';
 import * as cartActions from '../../store/actions/cart';
@@ -21,7 +24,7 @@ const Cart = () => {
       });
     }
     return transformedCartItems.sort((a, b) =>
-      a.productId > b.productId ? 1 : -1,
+      a.productId > b.productId ? 1 : -1
     );
   });
   return (
@@ -73,7 +76,7 @@ const styles = StyleSheet.create({
     padding: 10,
     shadowColor: 'black',
     shadowOpacity: 0.26,
-    shadowOffset: {width: 0, height: 2},
+    shadowOffset: { width: 0, height: 2 },
     shadowRadius: 8,
     elevation: 5,
     borderRadius: 10,

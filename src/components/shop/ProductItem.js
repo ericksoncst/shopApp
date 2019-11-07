@@ -1,3 +1,4 @@
+/* eslint-disable no-use-before-define */
 import React from 'react';
 import {
   Text,
@@ -21,7 +22,7 @@ const ProductItem = props => {
       <View style={styles.touchable}>
         <TouchableCmp onPress={props.onSelect} useForeground>
           <View style={styles.imageContainer}>
-            <Image style={styles.image} source={{uri: props.image}} />
+            <Image style={styles.image} source={{ uri: props.image }} />
           </View>
           <View style={styles.details}>
             <Text style={styles.title}>{props.title}</Text>
@@ -38,7 +39,7 @@ const styles = StyleSheet.create({
   product: {
     shadowColor: 'black',
     shadowOpacity: 0.26,
-    shadowOffset: {width: 0, height: 2},
+    shadowOffset: { width: 0, height: 2 },
     shadowRadius: 8,
     elevation: 5,
     borderRadius: 10,

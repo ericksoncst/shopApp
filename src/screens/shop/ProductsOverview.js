@@ -1,7 +1,7 @@
 import React from 'react';
-import {FlatList, Platform, Button} from 'react-native';
-import {useSelector, useDispatch} from 'react-redux';
-import {HeaderButtons, Item} from 'react-navigation-header-buttons';
+import { FlatList, Platform, Button } from 'react-native';
+import { useSelector, useDispatch } from 'react-redux';
+import { HeaderButtons, Item } from 'react-navigation-header-buttons';
 
 import ProductItem from '../../components/shop/ProductItem';
 import * as cartActions from '../../store/actions/cart';
@@ -28,7 +28,8 @@ const ProductsOverview = props => {
           price={itemData.item.price}
           onSelect={() => {
             selectHandler(itemData.item.id, itemData.item.title);
-          }}>
+          }}
+        >
           <Button
             color={colors.primary}
             title="View Details"

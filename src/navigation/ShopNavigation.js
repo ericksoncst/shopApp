@@ -1,8 +1,8 @@
 import React from 'react';
-import {Platform} from 'react-native';
-import {createAppContainer} from 'react-navigation';
-import {createDrawerNavigator} from 'react-navigation-drawer';
-import {createStackNavigator} from 'react-navigation-stack';
+import { Platform } from 'react-native';
+import { createAppContainer } from 'react-navigation';
+import { createDrawerNavigator } from 'react-navigation-drawer';
+import { createStackNavigator } from 'react-navigation-stack';
 import Icon from 'react-native-vector-icons/Ionicons';
 import ProductsOverview from '../screens/shop/ProductsOverview';
 import colors from '../constants/colors';
@@ -28,8 +28,8 @@ const defaulNavOptions = {
 const ProductsNavigator = createStackNavigator(
   {
     ProductsOverView: ProductsOverview,
-    ProductDetails: ProductDetails,
-    Cart: Cart,
+    ProductDetails,
+    Cart,
   },
   {
     navigationOptions: {
@@ -42,12 +42,12 @@ const ProductsNavigator = createStackNavigator(
       ),
     },
     defaultNavigationOptions: defaulNavOptions,
-  },
+  }
 );
 
 const OrdersNavigator = createStackNavigator(
   {
-    Orders: Orders,
+    Orders,
   },
   {
     navigationOptions: {
@@ -60,13 +60,13 @@ const OrdersNavigator = createStackNavigator(
       ),
     },
     defaultNavigationOptions: defaulNavOptions,
-  },
+  }
 );
 
 const AdminNavigator = createStackNavigator(
   {
-    UserProducts: UserProducts,
-    EditProducts: EditProducts,
+    UserProducts,
+    EditProducts,
   },
   {
     navigationOptions: {
@@ -79,7 +79,7 @@ const AdminNavigator = createStackNavigator(
       ),
     },
     defaultNavigationOptions: defaulNavOptions,
-  },
+  }
 );
 
 const ShopNavigator = createDrawerNavigator(
@@ -92,7 +92,7 @@ const ShopNavigator = createDrawerNavigator(
     contentOptions: {
       activeTintColor: colors.primary,
     },
-  },
+  }
 );
 
 export default createAppContainer(ShopNavigator);

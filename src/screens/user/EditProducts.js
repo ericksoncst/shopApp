@@ -9,8 +9,9 @@ import {
   Platform,
 } from 'react-native';
 import { HeaderButtons, Item } from 'react-navigation-header-buttons';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import HeaderButton from '../../components/ui/HeaderButton';
+import * as productActions from '../../store/actions/products';
 
 const EditProducts = props => {
   const productId = props.navigation.getParam('productId');
@@ -25,11 +26,19 @@ const EditProducts = props => {
   const [description, setDescription] = useState(
     editedProduct ? editedProduct.description : ''
   );
+  const dispatch = useDispatch();
 
   const submitHandler = useCallback(() => {
-    // eslint-disable-next-line no-console
-    console.log('SUBMIT');
-  }, []);
+    if (editedProduct) {
+      dispatch(
+        productActions.updateProduct(productId, title, description, imageUrl)
+      );
+    } else {
+      dispatch(
+        productActions.createProduct(title, description, imageUrl, +price)
+      );
+    }
+  }, [dispatch, productId, title, description, imageUrl, price]);
 
   useEffect(() => {
     props.navigation.setParams({ submit: submitHandler });
@@ -43,7 +52,7 @@ const EditProducts = props => {
           <TextInput
             style={styles.input}
             value={title}
-            onChange={text => setTitle(text)}
+            onChangeText={text => setTitle(text)}
           />
         </View>
         <View style={styles.formControl}>
@@ -51,7 +60,7 @@ const EditProducts = props => {
           <TextInput
             style={styles.input}
             value={imageUrl}
-            onChange={text => setImageUrl(text)}
+            onChangeText={text => setImageUrl(text)}
           />
         </View>
         {editedProduct ? null : (
@@ -60,7 +69,7 @@ const EditProducts = props => {
             <TextInput
               style={styles.input}
               value={price}
-              onChange={text => setPrice(text)}
+              onChangeText={text => setPrice(text)}
             />
           </View>
         )}
@@ -69,7 +78,7 @@ const EditProducts = props => {
           <TextInput
             style={styles.input}
             value={description}
-            onChange={text => setDescription(text)}
+            onChangeText={text => setDescription(text)}
           />
         </View>
       </View>

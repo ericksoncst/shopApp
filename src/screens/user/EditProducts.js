@@ -1,12 +1,14 @@
-import React, { Component } from 'react'
-import { Text, View } from 'react-native'
+import React from 'react';
+import {View, Text, StyleSheet} from 'react-native';
 
-export default class EditProducts extends Component {
-  render() {
-    return (
-      <View>
-        <Text> textInComponent </Text>
-      </View>
-    )
-  }
-}
+const EditProducts = () => {
+  return (
+    <View>
+      <Text>Edit Product</Text>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({});
+
+export default EditProducts;

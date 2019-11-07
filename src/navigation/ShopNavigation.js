@@ -10,6 +10,7 @@ import ProductDetails from '../screens/shop/ProductDetails';
 import Cart from '../screens/shop/Cart';
 import Orders from '../screens/shop/Orders';
 import UserProducts from '../screens/user/UserProducts';
+import EditProducts from '../screens/user/EditProducts';
 
 const defaulNavOptions = {
   headerStyle: {
@@ -65,6 +66,7 @@ const OrdersNavigator = createStackNavigator(
 const AdminNavigator = createStackNavigator(
   {
     UserProducts: UserProducts,
+    EditProducts: EditProducts,
   },
   {
     navigationOptions: {

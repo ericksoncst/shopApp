@@ -29,7 +29,9 @@ const Cart = () => {
       <View style={styles.sumary}>
         <Text style={styles.sumaryText}>
           {'Total: '}
-          <Text style={styles.amount}>${cartTotalAmount.toFixed(2)}</Text>
+          <Text style={styles.amount}>
+            ${Math.round(cartTotalAmount.toFixed(2) * 100) / 100}
+          </Text>
         </Text>
         <Button
           color={colors.accent}

@@ -8,7 +8,7 @@ class Order {
     this.date = date;
   }
 
-  get redableDate() {
+  get readableDate() {
     // return this.date.toLocaleDateString('en-EN', {
     //   year: 'numeric',
     //   month: 'long',

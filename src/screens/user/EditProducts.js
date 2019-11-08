@@ -7,7 +7,6 @@ import {
   TextInput,
   StyleSheet,
   Platform,
-  KeyboardAvoidingView,
 } from 'react-native';
 import { HeaderButtons, Item } from 'react-navigation-header-buttons';
 import { useSelector, useDispatch } from 'react-redux';
@@ -47,61 +46,55 @@ const EditProducts = props => {
   }, [submitHandler]);
 
   return (
-    <KeyboardAvoidingView
-      style={{ flex: 1 }}
-      keyboardVerticalOffset={100}
-      behavior="padding"
-    >
-      <ScrollView>
-        <View style={styles.form}>
-          <View style={styles.formControl}>
-            <Text style={styles.label}>Title</Text>
-            <TextInput
-              style={styles.input}
-              value={title}
-              onChangeText={text => setTitle(text)}
-              keyboardType="default"
-              autoCorrect
-              autoCapitalize="sentences"
-              returnKeyType="next"
-            />
-          </View>
-          <View style={styles.formControl}>
-            <Text style={styles.label}>Image URL</Text>
-            <TextInput
-              style={styles.input}
-              value={imageUrl}
-              onChangeText={text => setImageUrl(text)}
-              keyboardType="default"
-              returnKeyType="next"
-            />
-          </View>
-          {editedProduct ? null : (
-            <View style={styles.formControl}>
-              <Text style={styles.label}>Price</Text>
-              <TextInput
-                style={styles.input}
-                value={price}
-                onChangeText={text => setPrice(text)}
-                keyboardType="decimal-pad"
-                returnKeyType="done"
-              />
-            </View>
-          )}
-          <View style={styles.formControl}>
-            <Text style={styles.label}>Description</Text>
-            <TextInput
-              style={styles.input}
-              value={description}
-              onChangeText={text => setDescription(text)}
-              autoCorrect
-              autoCapitalize="sentences"
-              returnKeyType="next"
-            />
-          </View>
+    <ScrollView>
+      <View style={styles.form}>
+        <View style={styles.formControl}>
+          <Text style={styles.label}>Title</Text>
+          <TextInput
+            style={styles.input}
+            value={title}
+            onChangeText={text => setTitle(text)}
+            keyboardType="default"
+            autoCorrect
+            autoCapitalize="sentences"
+            returnKeyType="next"
+          />
         </View>
-      </ScrollView>
-    </KeyboardAvoidingView>
+        <View style={styles.formControl}>
+          <Text style={styles.label}>Image URL</Text>
+          <TextInput
+            style={styles.input}
+            value={imageUrl}
+            onChangeText={text => setImageUrl(text)}
+            keyboardType="default"
+            returnKeyType="next"
+          />
+        </View>
+        {editedProduct ? null : (
+          <View style={styles.formControl}>
+            <Text style={styles.label}>Price</Text>
+            <TextInput
+              style={styles.input}
+              value={price}
+              onChangeText={text => setPrice(text)}
+              keyboardType="decimal-pad"
+              returnKeyType="done"
+            />
+          </View>
+        )}
+        <View style={styles.formControl}>
+          <Text style={styles.label}>Description</Text>
+          <TextInput
+            style={styles.input}
+            value={description}
+            onChangeText={text => setDescription(text)}
+            autoCorrect
+            autoCapitalize="sentences"
+            returnKeyType="next"
+          />
+        </View>
+      </View>
+    </ScrollView>
   );
 };
 
